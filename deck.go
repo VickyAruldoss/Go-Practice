@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strings"
+	"time"
 )
 
 type deck []string
@@ -26,7 +28,17 @@ func (d deck) print() {
 		fmt.Println(i, card)
 	}
 }
- 
+
 func (d deck) toString() string {
-	return strings.Join([]string(d),",")
+	return strings.Join([]string(d), ",")
+}
+
+func (d deck) shuffle() {
+	source := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(source)
+
+	for i := range d {
+		newPosition := r.Intn(len(d) - 1)
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}
 }
