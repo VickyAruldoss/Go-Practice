@@ -24,3 +24,24 @@ func (s *TwoNumberSumCalculatorSuite) TestShouldCallAndReturnAnArray() {
 	actual := s.TwoNumberSumCalculator.twoNumberSumCalc(arr, 10)
 	s.Suite.NotNil(actual)
 }
+
+func (s *TwoNumberSumCalculatorSuite) TestShouldReturnSumOfTwoNumbers() {
+	arr := []int{3, 5, -4, 8, 11, 1, -1, 6}
+	expected := []int{11, -1}
+	actutal := s.TwoNumberSumCalculator.twoNumberSumCalc(arr, 10)
+	s.Suite.Equal(expected, actutal)
+}
+
+func (s *TwoNumberSumCalculatorSuite) TestShouldAddSumOfTwoNumbersWhenLengthIsTwo() {
+	arr := []int{4, 6}
+	expected := []int{4, 6}
+	actutal := s.TwoNumberSumCalculator.twoNumberSumCalc(arr, 10)
+	s.Suite.Equal(expected, actutal)
+}
+
+func (s *TwoNumberSumCalculatorSuite) TestShouldAddSumOfTwoNumbersWhenLengthIsHuge() {
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	expected := []int{8, 9}
+	actutal := s.TwoNumberSumCalculator.twoNumberSumCalc(arr, 17)
+	s.Suite.Equal(expected, actutal)
+}
