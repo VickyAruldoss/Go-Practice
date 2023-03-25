@@ -1,7 +1,11 @@
 package main
 
+import (
+	"fmt"
+)
+
 func main() {
-	cards := newDeck()
-	cards.shuffle()
-	cards.print()
+	// tw := two.NewTwoNumberSum()
+	// tw.Sum()
+	fmt.Println("OMG its happending...!!!!")
 }
