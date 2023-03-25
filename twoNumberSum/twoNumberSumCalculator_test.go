@@ -45,3 +45,24 @@ func (s *TwoNumberSumCalculatorSuite) TestShouldAddSumOfTwoNumbersWhenLengthIsHu
 	actutal := s.TwoNumberSumCalculator.twoNumberSumCalc(arr, 17)
 	s.Suite.Equal(expected, actutal)
 }
+
+func (s *TwoNumberSumCalculatorSuite) TestShouldSumOfTwoNumbersForSolutionTwo() {
+	arr := []int{3, 5, -4, 8, 11, 1, -1, 6}
+	expected := []int{11, -1}
+	actutal := s.TwoNumberSumCalculator.twoNumberSumCalcSol2(arr, 10)
+	s.Suite.Equal(expected, actutal)
+}
+
+func (s *TwoNumberSumCalculatorSuite) TestShouldAddSumOfTwoNumbersWhenLengthIsTwoSolTwo() {
+	arr := []int{4, 6}
+	expected := []int{6, 4}
+	actutal := s.TwoNumberSumCalculator.twoNumberSumCalcSol2(arr, 10)
+	s.Suite.Equal(expected, actutal)
+}
+
+func (s *TwoNumberSumCalculatorSuite) TestShouldAddSumOfTwoNumbersWhenLengthIsHugeSolTwo() {
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	expected := []int{9, 8}
+	actutal := s.TwoNumberSumCalculator.twoNumberSumCalcSol2(arr, 17)
+	s.Suite.Equal(expected, actutal)
+}
