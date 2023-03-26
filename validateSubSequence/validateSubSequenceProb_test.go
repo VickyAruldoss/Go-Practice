@@ -23,3 +23,13 @@ func (s *TestValidateSubSequenceSuite) Test_ShouldCallAndReturnBoolValue() {
 	expected := s.ValidateSubSequenceProb.IsValidSubsequence([]int{5, 1, 22, 25, 6, -1, 8, 10}, []int{1, 6, -1, 10})
 	s.Suite.True(expected)
 }
+
+func (s *TestValidateSubSequenceSuite) Test_ShouldCallAndReturnBoolValue01() {
+	expected := s.ValidateSubSequenceProb.IsValidSubsequence([]int{5, 1, 22, 25, 6, -1, 8, 10}, []int{25})
+	s.Suite.True(expected)
+}
+
+func (s *TestValidateSubSequenceSuite) Test_ShouldCallAndReturnBoolValue02() {
+	expected := s.ValidateSubSequenceProb.IsValidSubsequence([]int{5, 1, 22, 25, 6, -1, 8, 10}, []int{5, 1, 22, 25, 6, -1, 8, 10, 12})
+	s.Suite.False(expected)
+}
